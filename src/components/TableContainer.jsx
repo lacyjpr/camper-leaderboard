@@ -1,6 +1,6 @@
 import React from 'react';
+import axios from 'axios';
 
-import Api from './api/Api';
 import Table from './Table';
 
 class TableContainer extends React.Component {
@@ -10,27 +10,23 @@ class TableContainer extends React.Component {
             users: [],
             errorMessage: undefined
         };
-
-        //this.setState = this.setState.bind(this);
     }
 
     componentDidMount() {
-        Api.getUsers()
-        .then(function(res) {
-            console.log('Api response', res);
-            this.setState({
-                users: res
+        return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
+            .then((res) => {
+                this.setState({
+                    users: res
+                });
+            })
+            .catch((error) => {
+                console.log('Unable to fetch users', error);
+                return(error);
             });
-        })
-        .catch(error => {
-            this.setState({
-                errorMessage: error.message
-            });
-        });
-
-        console.log('state.users', this.state.users);
     }
+
     render() {
+        console.log('this.state.users', this.state.users);
         return (
             <Table/>
         );
