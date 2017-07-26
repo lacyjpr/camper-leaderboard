@@ -11,20 +11,24 @@ class TableContainer extends React.Component {
             errorMessage: undefined
         };
 
-        this.setState = this.setState.bind(this);
+        //this.setState = this.setState.bind(this);
     }
 
     componentDidMount() {
-        Api.getUsers().then((res) => {
+        Api.getUsers()
+        .then(function(res) {
+            console.log('Api response', res);
             this.setState({
                 users: res
             });
-        }, (error) => {
+        })
+        .catch(error => {
             this.setState({
                 errorMessage: error.message
             });
         });
-        console.log(this.state.users);
+
+        console.log('state.users', this.state.users);
     }
     render() {
         return (
