@@ -16,7 +16,7 @@ class TableContainer extends React.Component {
         return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
             .then((res) => {
                 this.setState({
-                    users: res
+                    users: res.data
                 });
             })
             .catch((error) => {
