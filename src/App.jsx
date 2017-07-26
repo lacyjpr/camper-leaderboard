@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Banner from './components/Banner';
-import Table from './components/Table';
+import TableContainer from './components/TableContainer';
 
-class App extends React.Component {
+class App extends React.Component {    
     render() {
         return (
             <div>
                 <Banner/>
-                <Table/>
+                <TableContainer/>
             </div>
       
         );
