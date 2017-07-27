@@ -8,7 +8,9 @@ class TableContainer extends React.Component {
         super(props);
         this.state = {
             users: [],
-            errorMessage: undefined
+            errorMessage: undefined,
+            sortedRecent: true,
+            sortedAllTime: false
         };
 
         this.sortRecent = this.sortRecent.bind(this);
@@ -32,7 +34,9 @@ class TableContainer extends React.Component {
         this.setState({
             users: this.state.users.sort((a, b) => {
                 return b.recent - a.recent;
-            })
+            }),
+            sortedRecent: true,
+            sortedAllTime: false
         });
     }
     
@@ -40,13 +44,15 @@ class TableContainer extends React.Component {
         this.setState({
             users: this.state.users.sort((a, b) => {
                 return b.alltime - a.alltime;
-            })
+            }),
+            sortedRecent: false,
+            sortedAllTime: true
         });
     }
     
     render() {
         return (
-            <Table users={this.state.users} handleRecent={this.sortRecent} handleAllTime={this.sortAllTime}/>
+            <Table users={this.state.users} handleRecent={this.sortRecent} handleAllTime={this.sortAllTime} sortedRecent={this.state.sortedRecent} sortedAllTime={this.state.sortedAllTime}/>
         );
     }
 }

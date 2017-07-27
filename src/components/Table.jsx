@@ -8,13 +8,13 @@ class Table extends React.Component {
             <table>
                 <thead>
                     <tr>
-                        <th colSpan="4">Leaderboard</th>
+                        <th colSpan="4" className="leaderboard">Leaderboard</th>
                     </tr>
                     <tr>
                         <th className="rank">#</th>
                         <th className="camper">Camper</th>
-                        <th className="month"><p onClick={this.props.handleRecent}>Points in last 30 days</p></th>
-                        <th className="allTime"><p onClick={this.props.handleAllTime}>All time points</p></th>
+                        <th className={'month' + (this.props.sortedRecent ? ' sorted' : ' null')} onClick={this.props.handleRecent}>Points in last 30 days</th>
+                        <th className={'allTime' + (this.props.sortedAllTime ? ' sorted' : ' null')} onClick={this.props.handleAllTime}>All time points</th>
                     </tr>
                 </thead>
                 <TableRow users={this.props.users}/>

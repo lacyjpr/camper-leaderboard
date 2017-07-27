@@ -1,4 +1,66 @@
-.avatar {
-    height: 3vh;
-    width: 3vh;
+$background: grey;
+$stripes: #d3d3d3;
+
+body {
+    background-color: $background;
+    font-family: sans-serif;
 }
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    border-radius: 5px;
+
+    td, th {
+        border: 1px solid black;
+    }
+
+    th {
+        background: white;
+        padding: 0;
+        text-align: center;
+        height: 6vh;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: $stripes;
+    }
+
+    tbody tr:nth-child(even) {
+        background: white;
+    } 
+    
+    .leaderboard {
+        height: 6vh;
+    }
+
+    .rank {
+        width: 1vw;
+    }
+
+    .camper {
+        width: 25vw;
+    }
+
+    .month {
+        width: 25vw;
+        cursor: pointer;
+    }
+
+    .allTime {
+        width: 25vw;
+        cursor: pointer;
+    }
+
+    .sorted::after {
+        content: '\25bc';
+        display: inline-block;
+        font-size: 1em;
+    }
+
+    .avatar {
+        height: 4vh;
+        width: 4vh;
+    }
+}
+
