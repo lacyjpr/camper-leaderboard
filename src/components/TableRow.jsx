@@ -18,7 +18,7 @@ class TableRow extends React.Component {
         );
         return (
             <tbody>{row}</tbody>
-        )
+        );
     }
 }
 
