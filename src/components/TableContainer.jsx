@@ -10,6 +10,9 @@ class TableContainer extends React.Component {
             users: [],
             errorMessage: undefined
         };
+
+        this.sortRecent = this.sortRecent.bind(this);
+        this.sortAllTime = this.sortAllTime.bind(this);
     }
 
     componentDidMount() {
@@ -25,10 +28,26 @@ class TableContainer extends React.Component {
             });
     }
 
+    sortRecent() {
+        this.setState({
+            users: this.state.users.sort((a, b) => {
+                b.recent - a.recent;
+            })
+        });
+    }
+    
+    sortAllTime() {
+        this.setState({
+            users: this.state.users.sort((a, b) => {
+                b.alltime - a.alltime;
+            })
+        });
+    }
+    
     render() {
         console.log('this.state.users', this.state.users);
         return (
-            <Table users={this.state.users}/>
+            <Table users={this.state.users} handleRecent={this.sortRecent} handleAllTime={this.sortAllTime}/>
         );
     }
 }

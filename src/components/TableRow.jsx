@@ -6,6 +6,7 @@ class TableRow extends React.Component {
         let rank = 1;
         // Map users array to table credit: http://www.automationfuel.com/reactjs-tables/
         let row = users.map((users) =>
+            
             <tr key={users.username}>
                 <td>{rank++}</td>
                 <td>
