@@ -1,9 +1,14 @@
 import React from 'react';
+import TableRow from './TableRow';
 
-const Table = () => (
-  <div>
-    <h2>Table Component</h2>
-  </div>
-);
+class Table extends React.Component{
+    render() {
+        return (
+            <table>
+                <TableRow users={this.props.users}/>
+            </table>
+        )
+    }
+}
 
 export default Table;

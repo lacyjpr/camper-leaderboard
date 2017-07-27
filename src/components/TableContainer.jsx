@@ -28,7 +28,7 @@ class TableContainer extends React.Component {
     render() {
         console.log('this.state.users', this.state.users);
         return (
-            <Table/>
+            <Table users={this.state.users}/>
         );
     }
 }
