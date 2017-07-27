@@ -45,7 +45,6 @@ class TableContainer extends React.Component {
     }
     
     render() {
-        console.log('this.state.users', this.state.users);
         return (
             <Table users={this.state.users} handleRecent={this.sortRecent} handleAllTime={this.sortAllTime}/>
         );
