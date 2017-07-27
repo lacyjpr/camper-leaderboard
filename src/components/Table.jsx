@@ -2,15 +2,7 @@ import React from 'react';
 import TableRow from './TableRow';
 
 
-class Table extends React.Component{
-    constructor(props){
-        super(props);
-
-       
-    }
-
-
-
+class Table extends React.Component {
     render() {
         return (
             <table>

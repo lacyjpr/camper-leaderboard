@@ -31,7 +31,13 @@ class TableContainer extends React.Component {
     sortRecent() {
         this.setState({
             users: this.state.users.sort((a, b) => {
-                b.recent - a.recent;
+                if (a.recent > b.recent) {
+                    return -1;
+                }
+                if (a.recent < b.recent) {
+                    return 1;
+                }
+                return 0;
             })
         });
     }
@@ -39,7 +45,13 @@ class TableContainer extends React.Component {
     sortAllTime() {
         this.setState({
             users: this.state.users.sort((a, b) => {
-                b.alltime - a.alltime;
+                if (a.alltime > b.alltime) {
+                    return -1;
+                }
+                if (a.alltime < b.alltime) {
+                    return 1;
+                }
+                return 0;
             })
         });
     }
