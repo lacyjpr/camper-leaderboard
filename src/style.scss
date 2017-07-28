@@ -16,14 +16,14 @@ body {
 
 .banner {
     background-color: $fcc;
-    height: 6vh;
+    height: 50px;
     width: 100vw;
     margin-bottom: 5vh;
     border: 1px solid black;   
 
     .logo {
         margin-top: 1vh;
-        width: 15vw;
+        width: 250px;
     }
 
 }
@@ -96,7 +96,7 @@ table {
 .footer {
     text-align: center;
     background-color: $fcc;
-    height: 6vh;
+    height: 50px;
     width: 100vw;
     margin-top: 5vh;
     border: 1px solid black;
