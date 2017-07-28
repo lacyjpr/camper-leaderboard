@@ -2,6 +2,7 @@ import React from 'react';
 
 import Banner from './components/Banner';
 import TableContainer from './components/TableContainer';
+import Footer from './components/Footer';
 
 class App extends React.Component {    
     render() {
@@ -9,6 +10,7 @@ class App extends React.Component {
             <div>
                 <Banner/>
                 <TableContainer/>
+                <Footer/>
             </div>
       
         );
